@@ -1,57 +1,61 @@
-sentiment_analyzer
-==============================
+Sentiment Analysis On Product Reviews Using Lexicon Based Model (VADER)
+==============================================================
 
-User sentiments analysis
+![](31422Click on Create (5).png);
 
-Project Organization
-------------
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+### The project's objective is to comprehend reviewers' sentiments about a product.
 
 
---------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+## Sentiment Analysis:
+
+* Sentiment analysis and opinion mining are the computational studies of user opinion to assess the social, psychological, philosophical, and behavioral behaviors and perceptions of a single person or a group of people about a good, service, policy, or certain scenarios. Sentiment analysis is a crucial area of study that helps with product decision-making by revealing people's feelings behind a text.
+
+
+## Customer Product reviews:
+* A customer review is a critique of a good or service written by a consumer who has used it or had some other interaction with it. Customer reviews on e-commerce and online buying platforms are a type of customer feedback. 90% of consumers read product reviews online before making a purchase, and 88% of them believe that product reviews are just as reliable as personal recommendations.
+
+
+### Dataset
+This dataset is having the data of 1K+ Amazon Product's Ratings and Reviews as per their details listed on the official website of Amazon
+
+#### Features
+
+* product_id - Product ID
+* product_name - Name of the Product
+* category - Category of the Product
+* discounted_price - Discounted Price of the Product
+* actual_price - Actual Price of the Product
+* discount_percentage - Percentage of Discount for the Product
+* rating - Rating of the Product
+* rating_count - Number of people who voted for the Amazon rating
+* about_product - Description about the Product
+* user_id - ID of the user who wrote review for the Product
+* user_name - Name of the user who wrote review for the Product
+* review_id - ID of the user review
+* review_title - Short review
+* review_content - Long review
+* img_link - Image Link of the Product
+* product_link - Official Website Link of the Product
+
+* Source: [Data](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset)
+
+
+# Workflow
+![](SentiBlog_1.png);
+
+
+### Steps
+1. Load Data
+
+2. Data Preprocessing
+   * Remove Punctuations,special symbols and special characters.
+
+   * Stopword Removal
+
+   * Tokenization
+
+   * Lemmatization
+
+3. Create sentiment polarity scores for user reviews on the dataset using a rule-based model (VADER).
