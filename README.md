@@ -91,3 +91,97 @@ word_cloud_dataframe(df, 'review_content')
 common_words_data(df, 'review_content')
 ```
 <img width="724" alt="Screenshot 2023-05-18 at 9 25 28 AM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/5494ea7d-7076-449f-893b-a47f1db3b244">
+
+
+## Function Reference
+```python
+import hokum
+```
+
+### ***hokum.read_data_file(file_path, file_type)***
+
+Reads any data in csv or xlsx or json or html or sql file format and returns a data frame.
+
+
+**<ins>Parameters:</ins>** <br />
+* **file_path: file_path** <br />
+                The location of the file
+                                  
+* **file_type: file** <br />
+                 Any data file type that pandas can read
+                                           
+**<ins>Returns:</ins> DataFrame** <br />
+                  A data frame
+                  
+                 
+
+
+
+### ***hokum.sentiment_data(dataframe, column)***
+
+Generate sentiment score for a given dataset and a selected column.
+
+**<ins>Parameters:</ins>** <br />
+* **dataframe: DataFrame** <br />
+                  The dataframe
+                                  
+* **column: str** <br />
+                  The selected column to generate sentiment scores for.
+                                           
+ **<ins>Returns:</ins> DataFrame** <br />
+                   A new data frame with two new columns. A sentiment_score column containing sentiment scores and sentiment_column column containing the sentiment tag (Positive, Negative or Neutral).
+                   
+                   
+
+### ***hokum.sentiment_graph(dataframe, column)***
+
+Displays a bar graph for sentiment labels from a data frame.
+
+
+**<ins>Parameters:</ins>** <br />
+* **dataframe: DataFrame** <br />
+                The data frame
+                                  
+* **column: str** <br />
+                 The column name which contains the sentiment labels.
+                                           
+**<ins>Returns:</ins> CountPlot** <br />
+                  Display a graph across sentiment labels in the data frame.
+                  
+                  
+                  
+                  
+### ***hokum.word_cloud_dataframe(dataframe, column, width=600, height=400, random_state=2, max_font_size=100, background_color='white', fig_width=10, fig_height=7)***
+
+Generate word cloud from a data frame given a specified column.
+
+
+**<ins>Parameters:</ins>** <br />
+* **dataframe: DataFrame** <br />
+                The data frame.
+                                  
+* **column: str** <br />
+                 The selected column from the data frame.
+                 
+* **width: int, default=600** <br />
+                The width of the word cloud.
+                
+* **height: int, default=400** <br />
+                The height of the word cloud.
+                
+* **random_state: int, default=2** <br />
+                 Minimum number of letters a word must have to be included.
+                 
+* **max_font_size: int, default=100** <br />
+                  Maximum font size for the largest word.
+                  
+* **background_color: str, default='white'** <br />
+                  Background color for the word cloud.
+                  
+* **fig_width: int, default=10** <br />
+                   The width of the figure.
+* **fig_height: int, default=7** <br />
+                   The height of the figure.
+                                           
+**<ins>Returns:</ins> Word Cloud** <br />
+                  Generate a word cloud
