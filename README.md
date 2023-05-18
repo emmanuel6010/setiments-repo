@@ -227,7 +227,7 @@ Analyze sentiments on a given text
  ```python
 >> text = 'pros- xiomi 5a is best in budget-nice picture quality-very nice audio output- full of featurecons- sometimes tv lags-sometimes stucksin this prize range all tv having cons like this.::overall nice tv,the product in this price range is good but as it is running in android 12 it lags. i hope after few updates the lags problem will be resolved,useless product and useless quality. display issues within 7 months and service center is not upto the mark. go for better brands where quality is assured. i would wish if there was option of negative stars.,uses as connectes tv the picture is very good. i was hopping a best level of song. globaly it is a good product.then ever,good quality,good 👍'
 >> 
->> text_sentiment(text)
+>> hokum.text_sentiment(text)
 '96.2% Positive'
  ```
  
@@ -270,6 +270,31 @@ Generate word cloud for a given text.
 ```python
 >> text1 = 'pros- xiomi 5a is best in budget-nice picture quality-very nice audio output- full of featurecons- sometimes tv lags-sometimes stucksin this prize range all tv having cons like this.::overall nice tv,the product in this price range is good but as it is running in android 12 it lags. i hope after few updates the lags problem will be resolved,useless product and useless quality. display issues within 7 months and service center is not upto the mark. go for better brands where quality is assured. i would wish if there was option of negative stars.,uses as connectes tv the picture is very good. i was hopping a best level of song. globaly it is a good product.then ever,good quality,good 👍'
 
->> word_cloud(text1)
+>> hokum.word_cloud(text1)
 ```
 <img width="846" alt="Screenshot 2023-05-18 at 2 53 46 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/8b72c87e-d592-4f3e-b102-b7ccdb733a7c">
+
+
+
+### ***hokum.common_words_text(text, num=10))***
+
+Counts common words from a text and returns a bar graph of the top n words from the text.
+
+
+**<ins>Parameters:</ins>** <br />
+* **text: str** <br />
+                The available text
+                 
+* **num: int, default=10** <br />
+                 The top 10 words from the text.              
+                                           
+**<ins>Returns:</ins> Bar Chart** <br />
+                  Displays a barplot for most common words from the text.
+                  
+**Example**
+```python
+>> text1 = 'pros- xiomi 5a is best in budget-nice picture quality-very nice audio output- full of featurecons- sometimes tv lags-sometimes stucksin this prize range all tv having cons like this.::overall nice tv,the product in this price range is good but as it is running in android 12 it lags. i hope after few updates the lags problem will be resolved,useless product and useless quality. display issues within 7 months and service center is not upto the mark. go for better brands where quality is assured. i would wish if there was option of negative stars.,uses as connectes tv the picture is very good. i was hopping a best level of song. globaly it is a good product.then ever,good quality,good 👍'
+
+>> hokum.common_word_text(text1)
+```
+<img width="690" alt="Screenshot 2023-05-18 at 3 29 55 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/0c852273-d2e8-4e85-8bb4-0248f321819b">
