@@ -76,7 +76,7 @@ def text_sentiment(text):
 
 
 
-def word_cloud(text, width=600, height=400, random_state=2, max_font_size=100, background_color='white'):
+def word_cloud(text, width=600, height=400, random_state=2, max_font_size=100, background_color='white', fig_width=10, fig_height=7):
     """Generate word cloud for a given text.
     
     Parameters
@@ -129,7 +129,7 @@ def word_cloud(text, width=600, height=400, random_state=2, max_font_size=100, b
                          collocations=False,
                          background_color=background_color).generate(all_words)
 
-    plt.figure(figsize=(10, 7))
+    plt.figure(figsize=(fig_width, fig_height))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off');
     
