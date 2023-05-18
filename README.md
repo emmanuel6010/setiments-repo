@@ -48,8 +48,13 @@ This dataset is having the data of 1K+ Amazon Product's Ratings and Reviews as p
 
 ### Steps
 1. Load Data
+```python
+df = read_data_file('../data/raw/amazon.csv', 'csv')
+df
+```
+![df1](https://github.com/emmanuel6010/setiments-repo/assets/76977423/014aa82b-318b-4779-9868-a6b14bda979c)
 
-2. Data Preprocessing
+2. Data Preprocessing and sentiment polarity scores for user reviews on the dataset using a rule-based model
    * Remove Punctuations,special symbols and special characters.
 
    * Stopword Removal
@@ -58,4 +63,9 @@ This dataset is having the data of 1K+ Amazon Product's Ratings and Reviews as p
 
    * Lemmatization
 
-3. Create sentiment polarity scores for user reviews on the dataset using a rule-based model (VADER).
+   * VADER
+```python
+sentiments = sentiment_data(df, 'review_content')
+sentiments
+```
+![df2](https://github.com/emmanuel6010/setiments-repo/assets/76977423/7902774e-26a6-4619-95bc-076b1081822f)
