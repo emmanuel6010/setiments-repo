@@ -298,3 +298,39 @@ Counts common words from a text and returns a bar graph of the top n words from 
 >> hokum.common_word_text(text1)
 ```
 <img width="690" alt="Screenshot 2023-05-18 at 3 29 55 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/0c852273-d2e8-4e85-8bb4-0248f321819b">
+
+
+### ***hokum.merge_dataframes(dataframes, on=None, how='inner')***
+
+Merges a list of data frames and returns the resulting data frame.
+
+
+**<ins>Parameters:</ins>** <br />
+* **dataframe: DataFrame** <br />
+                List of data frames
+                                  
+* **on: label, list, default=None** <br />
+                 Column or index level names to join on. These must be found in both DataFrames. If on is None and not merging on indexes then this defaults to the intersection of the columns in both DataFrames.
+                 
+* **how: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}, default=‘inner’** <br />
+            Type of merge to be performed. <br />
+            1. left: use only keys from left frame, similar to a SQL left outer join; preserve key order. <br />        
+            2. right: use only keys from right frame, similar to a SQL right outer join; preserve key order. <br />                
+            3. outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically. <br />         
+            4. inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys. <br /><br />
+            5. cross: creates the cartesian product from both frames, preserves the order of the left keys. <br />             
+                                           
+**<ins>Returns:</ins> DataFrame** <br />
+                  The merged dataframe
+                  
+**Example**
+
+<img width="329" alt="Screenshot 2023-05-18 at 4 51 45 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/89455ffe-e4f5-41e6-b15e-621b215e2012">
+
+
+```python
+hokum.merge_dataframes([df1, df2, df3])
+```
+
+<img width="342" alt="Screenshot 2023-05-18 at 4 55 52 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/c632f458-55b3-4e67-9b63-9355c2704f2c">
+
