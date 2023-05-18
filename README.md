@@ -185,3 +185,91 @@ Generate word cloud from a data frame given a specified column.
                                            
 **<ins>Returns:</ins> Word Cloud** <br />
                   Generate a word cloud
+
+
+
+### ***hokum.common_words_data(dataframe, column, num=10)***
+
+Graph the most common words from a text column in a data frame.
+
+
+**<ins>Parameters:</ins>** <br />
+* **dataframe: DataFrame** <br />
+                The available dataset
+                                  
+* **column: str** <br />
+                 The text column of the dataset.
+                 
+* **num: int, default=10** <br />
+                 The top 10 words from the text.              
+                                           
+**<ins>Returns:</ins> Bar Chart** <br />
+                  Displays a barplot for most common words from the text.
+                  
+                  
+                  
+                  
+                  
+### ***hokum.text_sentiment(text)***
+
+Analyze sentiments on a given text
+
+
+**<ins>Parameter:</ins>** <br />
+* **text: str** <br />
+                A string text
+                                               
+                                           
+**<ins>Returns:</ins> str** <br />
+                  Analyze sentiment and prints out the sentiment score and tag on the text
+
+**Example**
+ ```python
+>> text = 'pros- xiomi 5a is best in budget-nice picture quality-very nice audio output- full of featurecons- sometimes tv lags-sometimes stucksin this prize range all tv having cons like this.::overall nice tv,the product in this price range is good but as it is running in android 12 it lags. i hope after few updates the lags problem will be resolved,useless product and useless quality. display issues within 7 months and service center is not upto the mark. go for better brands where quality is assured. i would wish if there was option of negative stars.,uses as connectes tv the picture is very good. i was hopping a best level of song. globaly it is a good product.then ever,good quality,good 👍'
+>> 
+>> text_sentiment(text)
+'96.2% Positive'
+ ```
+ 
+ 
+ 
+ 
+
+### ***hokum.word_cloud(text, width=600, height=400, random_state=2, max_font_size=100, background_color='white', fig_width=10, fig_height=7)***
+
+Generate word cloud for a given text.
+
+
+**<ins>Parameters:</ins>** <br />
+* **text: string** <br />
+                The text
+                 
+* **width: int, default=600** <br />
+                The width of the word cloud.
+                
+* **height: int, default=400** <br />
+                The height of the word cloud.
+                
+* **random_state: int, default=2** <br />
+                 Minimum number of letters a word must have to be included.
+                 
+* **max_font_size: int, default=100** <br />
+                  Maximum font size for the largest word.
+                  
+* **background_color: str, default='white'** <br />
+                  Background color for the word cloud.
+                  
+* **fig_width: int, default=10** <br />
+                   The width of the figure.
+* **fig_height: int, default=7** <br />
+                   The height of the figure.
+                                           
+**<ins>Returns:</ins> Word Cloud** <br />
+                  Generate a word cloud
+**Example**
+```python
+>> text1 = 'pros- xiomi 5a is best in budget-nice picture quality-very nice audio output- full of featurecons- sometimes tv lags-sometimes stucksin this prize range all tv having cons like this.::overall nice tv,the product in this price range is good but as it is running in android 12 it lags. i hope after few updates the lags problem will be resolved,useless product and useless quality. display issues within 7 months and service center is not upto the mark. go for better brands where quality is assured. i would wish if there was option of negative stars.,uses as connectes tv the picture is very good. i was hopping a best level of song. globaly it is a good product.then ever,good quality,good 👍'
+
+>> word_cloud(text1)
+```
+<img width="846" alt="Screenshot 2023-05-18 at 2 53 46 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/8b72c87e-d592-4f3e-b102-b7ccdb733a7c">
