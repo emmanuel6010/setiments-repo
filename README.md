@@ -1,7 +1,7 @@
 Sentiment Analysis On Product Reviews Using Lexicon Based Model (VADER)
 ==============================================================
+![31422Click on Create (5)](https://github.com/emmanuel6010/setiments-repo/assets/76977423/a214e556-5bb5-4b91-a555-796de875316a)
 
-![](31422Click on Create (5).png);
 
 ### The project's objective is to comprehend reviewers' sentiments about a product.
 
@@ -45,12 +45,16 @@ This dataset is having the data of 1K+ Amazon Product's Ratings and Reviews as p
 # Workflow
 ![](SentiBlog_1.png);
 
+### Libraries
+```python
+from hokum import text_sentiment, word_cloud, common_words_data, common_words_text, sentiment_graph, word_cloud_dataframe, sentiment_data, merge_dataframes, read_data_file, recommend_data, audio_transcription
+```
 
 ### Steps
 1. Load Data
 ```python
 df = read_data_file('../data/raw/amazon.csv', 'csv')
-df
+df.head(20)
 ```
 ![df1](https://github.com/emmanuel6010/setiments-repo/assets/76977423/014aa82b-318b-4779-9868-a6b14bda979c)
 
@@ -66,6 +70,24 @@ df
    * VADER
 ```python
 sentiments = sentiment_data(df, 'review_content')
-sentiments
+sentiments.head(20)
 ```
 ![df2](https://github.com/emmanuel6010/setiments-repo/assets/76977423/7902774e-26a6-4619-95bc-076b1081822f)
+
+3. Visualize the general sentiment labels
+```python
+sentiment_graph(sentiments, 'sentiment_review_content')
+```
+<img width="724" alt="Screenshot 2023-05-18 at 9 12 06 AM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/621f040d-d086-4c80-99f5-0b8e8c66f011">
+
+4. Word Cloud: Generate word cloud for the overall reviews (review_content) from the dataframe
+```python
+word_cloud_dataframe(df, 'review_content')
+```
+<img width="784" alt="Screenshot 2023-05-18 at 8 29 01 AM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/9d5c64e2-8ac6-417c-96ab-94ea7546e569">
+
+5. Count the top ten words
+```python
+common_words_data(df, 'review_content')
+```
+<img width="724" alt="Screenshot 2023-05-18 at 9 25 28 AM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/5494ea7d-7076-449f-893b-a47f1db3b244">
