@@ -47,7 +47,7 @@ This dataset is having the data of 1K+ Amazon Product's Ratings and Reviews as p
 
 ### Libraries
 ```python
-from hokum import text_sentiment, word_cloud, common_words_data, common_words_text, sentiment_graph, word_cloud_dataframe, sentiment_data, merge_dataframes, read_data_file, recommend_data, audio_transcription
+from hokum import text_sentiment, word_cloud, common_words_data, common_words_text, sentiment_graph, word_cloud_dataframe, sentiment_data, merge_dataframes, read_data_file, audio_transcription
 ```
 
 ### Steps
@@ -334,3 +334,19 @@ hokum.merge_dataframes([df1, df2, df3])
 
 <img width="342" alt="Screenshot 2023-05-18 at 4 55 52 PM" src="https://github.com/emmanuel6010/setiments-repo/assets/76977423/c632f458-55b3-4e67-9b63-9355c2704f2c">
 
+
+
+
+
+### ***hokum.audio_transcription(path)***
+
+Splits audio file into chunks and applies speech recognition.
+
+
+**<ins>Parameter:</ins>** <br />
+* **path: audio_file_path.wav** <br />
+                The path to the audio file
+                                               
+                                           
+**<ins>Returns:</ins> str** <br />
+                  Generate text from the audio
