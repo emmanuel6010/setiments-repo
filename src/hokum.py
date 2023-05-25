@@ -17,6 +17,7 @@ import speech_recognition as sr
 import os 
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
+import plotly.express as px
 
 
 
@@ -195,8 +196,9 @@ def common_words_text(text, num=10):
     frequency_dist = FreqDist(tokens)
     top_num = frequency_dist.most_common(num)
     frequency_dist_series = pd.Series(dict(top_num))
-    sns.set_theme(style="ticks")
-    sns.barplot(y=frequency_dist_series.index, x=frequency_dist_series.values, color='green');
+    fig = px.bar(y=frequency_dist_series.index, x=frequency_dist_series.values, labels={"y": "Words", "x": "Counts"})
+    fig.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+    fig.show()
     
     
     
