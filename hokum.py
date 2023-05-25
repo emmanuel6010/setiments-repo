@@ -163,7 +163,7 @@ def common_words_data(dataframe, column, num=10):
     tokens = nltk.word_tokenize(words)
     frequency_dist = FreqDist(tokens)
     top_num = frequency_dist.most_common(num)
-    frequency_dist_series = pd.Series(dict(top_num))
+    frequency_dist_series = pd.Series(dict(num))
     sns.set_theme(style="ticks")
     sns.barplot(y=frequency_dist_series.index, x=frequency_dist_series.values, color='green');
     
@@ -194,9 +194,10 @@ def common_words_text(text, num=10):
     tokens = nltk.word_tokenize(words)
     frequency_dist = FreqDist(tokens)
     top_num = frequency_dist.most_common(num)
-    frequency_dist_series = pd.Series(dict(top_num))
-    sns.set_theme(style="ticks")
-    sns.barplot(y=frequency_dist_series.index, x=frequency_dist_series.values, color='green');
+    frequency_dist_series = pd.Series(dict(num))
+    fig = px.bar(y=frequency_dist_series.index, x=frequency_dist_series.values, labels={"y": "Words", "x": "Counts"})
+    fig.update_layout(barmode='stack', yaxis={'categoryorder':'total ascending'})
+    fig.show()
     
     
     
